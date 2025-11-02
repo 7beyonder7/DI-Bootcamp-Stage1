@@ -2,7 +2,7 @@
 # Instructions
 # Print the following output using one line of code:
 
-print("Hello, World!\n" * 5)
+print("Hello, World!\n" * 5, end='')
 
 # Exercise 2: Some Math
 # Instructions
