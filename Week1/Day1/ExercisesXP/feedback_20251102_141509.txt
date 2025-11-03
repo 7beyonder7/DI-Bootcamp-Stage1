@@ -1,0 +1,10 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week1/Day1/ExercisesXP/exercise.py
+suggestions for improvement:
+- Consider adding more descriptive comments to enhance readability, especially for complex logic.
+- The "Hello World" exercise could be improved by using '\n' instead of creating an additional space.
+Brief justification:
+- correctness: All exercises are correctly implemented according to the instructions provided in the chapter content. Each exercise addresses the specified problem accurately and completely.
+- readability: The code is generally well-structured and easy to understand. Variable names are descriptive, and the logic is straightforward. Readability could be further improved with slightly more comments.
+- performance: The code is efficient and performs well, as it uses basic operations and appropriate data structures for each exercise.
+- security: The code does not involve any security vulnerabilities. User inputs are appropriately handled, and no sensitive information is exposed.
+
