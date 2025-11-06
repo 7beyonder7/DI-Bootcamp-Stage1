@@ -112,6 +112,7 @@ wallet = "$300"
 
 
 def clean_price(price_str):
+    # This removes everything except digits and dots, so it also works for values like "$1,000.50".
     return int(re.sub(r"[^\d]", "", price_str))
 
 
@@ -131,6 +132,7 @@ def make_purchase(items_to_buy, budget):
         print(basket)
     else:
         print("Nothing")
+    return basket
 
 
 make_purchase(items_purchase, wallet)
