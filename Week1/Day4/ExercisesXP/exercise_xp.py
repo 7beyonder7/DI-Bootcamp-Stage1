@@ -28,7 +28,6 @@
 # I am learning about functions in Python.
 
 import random
-from random import randint
 
 
 def display_message():
@@ -122,7 +121,7 @@ describe_city("Beijing", "China")
 
 
 def compare_number(user_number):
-    random_number = randint(1, 100)
+    random_number = random.randint(1, 100)
 
     if user_number == random_number:
         print("Success!")
