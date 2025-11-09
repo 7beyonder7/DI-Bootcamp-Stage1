@@ -191,3 +191,100 @@ enjoy_the_silence = Song([
 ])
 
 enjoy_the_silence.sing_me_a_song()
+
+# Exercise 4 : Afternoon at the Zoo
+# Goal:
+
+# Create a Zoo class to manage animals. The class should allow adding animals, displaying them, selling them, and organizing them into alphabetical groups.
+
+
+# Key Python Topics:
+
+# Classes and objects
+# Object instantiation
+# Methods
+# Lists
+# Dictionaries (for grouping)
+# String manipulation
+
+
+# Instructions
+# Step 1: Define the Zoo Class
+# 1. Create a class called Zoo.
+
+# 2. Implement the __init__() method:
+
+# It takes a string parameter zoo_name, representing the name of the zoo.
+# Initialize an empty list called animals to keep track of animal names.
+# 3. Add a method add_animal(new_animal):
+
+# This method adds a new animal to the animals list.
+# Do not add the animal if it is already in the list.
+# 4. Add a method get_animals():
+
+# This method prints all animals currently in the zoo.
+# 5. Add a method sell_animal(animal_sold):
+
+# This method checks if a specified animal exists on the animals list and if so, remove from it.
+# 6. Add a method sort_animals():
+
+# This method sorts the animals alphabetically.
+# It also groups them by the first letter of their name.
+# The result should be a dictionary where:
+# Each key is a letter.
+# Each value is a list of animals that start with that letter.
+# Bonus: Modify the add_animal() method to get *args so you dont need to repeat the method each time
+# for a new animal, you can pass multiple animals names separated by a comma.
+
+
+class Zoo:
+    def __init__(self, zoo_name):
+        self.zoo_name = zoo_name
+        self.animals = []
+
+    def add_animal(self, *new_animals):
+        for animal in new_animals:
+            if animal not in self.animals:
+                self.animals.append(animal)
+                print(f"{animal} has been added to the zoo.")
+            else:
+                print(f"{animal} is already in the zoo!")
+
+    def get_animals(self):
+        print(f"Animals in {self.zoo_name}:")
+        for animal in self.animals:
+            print(f"- {animal}")
+
+    def sell_animal(self, animal_sold):
+        if animal_sold in self.animals:
+            self.animals.remove(animal_sold)
+            print(f"{animal_sold} has been sold.")
+        else:
+            print(f"{animal_sold} is not in the zoo!")
+
+    def sort_animals(self):
+        self.animals.sort()
+        grouped = {}
+        for animal in self.animals:
+            letter = animal[0].upper()
+            grouped.setdefault(letter, []).append(animal)
+        return grouped
+
+    def get_groups(self):
+        grouped_animals = self.sort_animals()
+        print("Grouped Animals:")
+        for letter, group in grouped_animals.items():
+            print(f"{letter}: {group}")
+
+
+my_zoo = Zoo("Safari Park")
+
+my_zoo.add_animal("Lion", "Zebra", "Baboon", "Bear",
+                  "Giraffe", "Cat", "Cougar")
+
+print()
+my_zoo.get_animals()
+print()
+my_zoo.sell_animal("Zebra")
+print()
+my_zoo.get_groups()
