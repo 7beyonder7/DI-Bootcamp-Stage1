@@ -1,0 +1,11 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week1/Day2/DailyChallenge/daily_challenge.py
+suggestions for improvement:
+- Consider adding more comments to enhance the readability of the functions, specifically explaining the logic behind each step.
+- Both functions could be more concise by removing unnecessary variables. For instance, in the first challenge, you could directly use the list comprehension without storing it in a separate variable.
+- Although the code works correctly, error handling could be expanded to catch specific exceptions like ValueError, which might occur if the user inputs a non-numeric value. This can make the code more robust.
+Brief justification:
+- correctness: The code accurately implements both challenges as described in the chapter content. The first challenge correctly generates a list of multiples based on user input, and the second challenge effectively removes consecutive duplicate letters from a string, aligning perfectly with the given instructions and examples.
+- readability: The code is generally well-structured and easy to follow. The use of descriptive variable names and comments helps in understanding the code's logic. However, there is room for improvement in terms of adding more detailed comments to explain the purpose of each section of the code.
+- performance: The performance of the code is efficient for the given tasks. Both algorithms have a time complexity of O(n), where n is the length of the input. This is optimal for the given requirements.
+- security: The code is reasonably secure, with the `get_int` function providing basic input validation to ensure that the user enters an integer. However, further validation could be added to prevent potential injection attacks or buffer overflows.
+
