@@ -1,0 +1,10 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week1/Day4/ExercisesXP/exercise_xp.py
+suggestions for improvement:
+- Consider adding Exercise 2: What's Your Favorite Book? to the script.
+- Remove unused imports, such as `from random import randint`, as `import random` already provides access to all functions within the module.
+Brief justification:
+- correctness: The code correctly implements exercises 1, 3, 4, 5, 6, and 7, fulfilling their respective goals as described in the chapter content. The exercises cover functions, parameters, default values, random number generation, conditionals, lists, and loops. Exercise 2 is the only missing one. Exercise 7 implements the base requirements and bonus tasks.
+- readability: The code is well-structured and easy to follow. Comments separate each exercise and describe the steps involved. The code uses meaningful variable names. Docstrings could enhance readability further.
+- performance: The code exhibits good performance. The functions are straightforward and efficient. There are no unnecessary loops or complex operations. The use of `random.uniform()` provides more accurate temperature values as required.
+- security: The code doesn't involve any user input except for Exercise 7, where input is validated to some extent, and doesn't perform any potentially unsafe operations. Therefore, the security risk is minimal.
+
