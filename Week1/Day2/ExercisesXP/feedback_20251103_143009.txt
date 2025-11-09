@@ -1,0 +1,9 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week1/Day2/ExercisesXP/exercise_xp.py
+suggestions for improvement:
+- Consider adding more descriptive variable names where appropriate to enhance readability.
+Brief justification:
+- correctness: The code accurately addresses all the exercises outlined in the chapter content, covering sets, tuples, lists, loops, conditionals, and input/output operations. Each exercise is correctly implemented according to its instructions.
+- readability: The code is well-organized with clear comments for each exercise. Variable names are generally descriptive. The use of f-strings and list comprehensions enhances readability in several places.
+- performance: The code is generally efficient for the given tasks. The use of built-in methods like `remove`, `append`, `insert`, `count`, `union`, and `split` contributes to good performance.
+- security: The code uses `isdigit()` to validate numerical inputs, which is a good practice to prevent errors. However, no explicit error handling is present beyond this. Input validation is implemented correctly.
+
