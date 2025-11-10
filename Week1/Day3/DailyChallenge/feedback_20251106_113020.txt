@@ -1,0 +1,10 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week1/Day3/DailyChallenge/daily_challenge.py
+suggestions for improvement:
+- Consider adding comments to explain more complex parts of the code, especially the regular expression used for cleaning the prices.
+- In the `make_purchase` function, consider returning the basket instead of printing it directly. This allows for greater flexibility in how the result is used.
+Brief justification:
+- correctness: The code accurately implements both challenges, addressing all requirements outlined in the chapter content. It correctly creates the letter index dictionary in Challenge 1 and determines affordable items in Challenge 2, including data cleaning, sorting, and handling the 'Nothing' case. The examples given in the prompt were all successfully tested.
+- readability: The code is generally well-formatted and easy to read. Variable names are descriptive. The use of comments to separate the two challenges improves readability. However, adding comments within functions could further enhance understanding.
+- performance: The code's performance is efficient for the given problem sizes. The use of `setdefault` in Challenge 1 is a good choice for dictionary construction. The cleaning of prices using regular expressions is also reasonably efficient. Overall, the code's performance is adequate.
+- security: The code includes basic input validation in Challenge 1 to ensure only letters are used. The regular expression in Challenge 2 helps prevent injection vulnerabilities when cleaning the price strings. No immediate security concerns are apparent.
+
