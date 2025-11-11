@@ -39,6 +39,12 @@ class Circle:
     def __repr__(self):
         return f"Circle(radius={self.radius:.2f}, diameter={self.diameter:.2f}, area={self.area:.2f})"
 
+    def __add__(self, other):
+        if not isinstance(other, Circle):
+            return NotImplemented
+        new_radius = self._radius + other._radius
+        return Circle(radius=new_radius)
+
     def __gt__(self, other):
         if not isinstance(other, Circle):
             return NotImplemented
@@ -72,6 +78,8 @@ c3 = Circle(radius=100)
 c4 = Circle(radius=100)
 print(c3 == c4)  # True
 
+c5 = c4 + c3
+print(c5)
 circles = [c1, c2, c3, c4]
 sorted_circles = sorted(circles)
 print(sorted_circles)
