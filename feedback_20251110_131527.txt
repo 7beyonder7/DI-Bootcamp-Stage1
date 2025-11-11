@@ -1,0 +1,13 @@
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day2/ExercisesXP/exercise.py
+suggestions for improvement:
+- In `Dog` class, the `bark` method says sings instead of is barking.
+- Exercise 3, create a new file that imports the `Dog` class from the previous exercise
+- Exercise 3, implement the `play(*args)` and `do_a_trick()` methods.
+Correctness: 75%
+-----
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day2/ExercisesXP/exercise_3.py
+suggestions for improvement:
+- Consider adding docstrings to explain the purpose and arguments of each class and method.
+- The `play` method could be more robust by handling cases where `args` might contain non-Dog objects.
+Correctness: 100%
+-----

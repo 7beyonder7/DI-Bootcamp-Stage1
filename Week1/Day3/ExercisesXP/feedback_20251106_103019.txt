@@ -1,0 +1,10 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week1/Day3/ExercisesXP/exercise_xp.py
+suggestions for improvement:
+- Consider using more descriptive variable names where appropriate to enhance readability.
+- The bonus part of Exercise 2 uses `peoples_group` when it should probably be `family` to keep naming consistent.
+Brief justification:
+- correctness: The code accurately addresses all the exercises in the chapter content, including the bonus sections. It correctly implements dictionary creation, looping, conditionals, and dictionary manipulations as described in the instructions. Each exercise produces the expected output, and the code is directly relevant to the chapter content.
+- readability: The code is well-structured and easy to follow, with appropriate comments and clear variable names. There is some minor inconsistency in naming (e.g., `peoples_group` in bonus), but it is generally well written.
+- performance: The code is efficient for the given tasks, utilizing appropriate data structures and algorithms. Dictionary comprehensions and the `zip` function are used effectively.
+- security: The code doesn't interact with external systems in a way that would raise security concerns. User input in Exercise 2 is validated to prevent errors.
+

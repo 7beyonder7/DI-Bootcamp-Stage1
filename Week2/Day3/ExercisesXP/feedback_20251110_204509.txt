@@ -1,0 +1,19 @@
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day3/ExercisesXP/exercise_one.py
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day3/ExercisesXP/exercise_xp.py
+suggestions for improvement:
+- In Exercise 1, while the implementation correctly uses dunder methods, consider adding `__radd__` for right addition to handle cases where the integer comes before the Currency object in addition.
+- In Exercise 1, the __slots__ attribute is a good optimization, but its usage here isn't crucial for correctness.  It can be removed without impacting functionality.
+- In Exercise 2, code was not provided. It would have been beneficial to have the code for this exercise.
+- In Exercise 7, it would improve readability to format the address output more clearly, for example, by replacing newline characters with commas and spaces.
+- In Exercise 7, consider adding exception handling (try-except blocks) around the Faker calls in case of network or library-related issues.
+Correctness: 90%
+-----
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day3/ExercisesXP/func.py
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
