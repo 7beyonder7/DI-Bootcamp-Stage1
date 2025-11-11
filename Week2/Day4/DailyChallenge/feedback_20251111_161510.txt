@@ -1,0 +1,10 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day4/DailyChallenge/daily_challenge.py
+suggestions for improvement:
+- In `word_frequency`, instead of returning a message when the word is not found, return `None` as suggested by the instructions.
+- Consider adding more comprehensive error handling for file operations in the `from_file` method.
+Brief justification:
+- correctness: The code accurately implements the `Text` class with `word_frequency`, `most_common_word`, and `unique_words` methods as described in Part I. It also correctly implements the `from_file` class method as specified in Part II. The `TextModification` class and its methods `remove_punctuation`, `remove_stop_words`, and `remove_special_characters` are also correctly implemented, adhering to the instructions in the bonus section. One minor deviation is in the `word_frequency` method where it returns a string instead of `None` when a word isn't found, although a "meaningful message" was allowed. Overall, it addresses almost all aspects of the problem description very well.
+- readability: The code is well-structured and easy to understand. It uses clear variable names and comments to explain different parts of the code. The separation of concerns into different classes and methods enhances readability.
+- performance: The code's performance is generally good. The use of dictionaries and sets for counting word frequencies and identifying unique words is efficient. Regular expressions in `TextModification` are also reasonably performant. There aren't any obvious performance bottlenecks.
+- security: The code doesn't have any major security vulnerabilities. Using `re.escape` helps prevent regular expression injection in `remove_punctuation`. When opening files, it uses a `try-except` block to catch potential `FileNotFoundError` or other exceptions, which is good practice. The code is safe.
+
