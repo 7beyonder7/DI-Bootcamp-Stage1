@@ -1,0 +1,11 @@
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day5/ExercisesXP/RockScissorsPaper/game.py
+suggestions for improvement:
+- Consider adding docstrings to methods for better understanding.
+- The `_normalize` method could be simplified slightly, but it's already quite readable.
+Correctness: 100%
+-----
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day5/ExercisesXP/RockScissorsPaper/rock-paper-scissors.py
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
