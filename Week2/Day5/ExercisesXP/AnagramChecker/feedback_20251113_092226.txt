@@ -1,0 +1,20 @@
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day5/ExercisesXP/AnagramChecker/anagram_checker.py
+suggestions for improvement:
+- In the `get_anagrams` method, add a condition to exclude the input word itself from the list of anagrams, as per the instructions.
+- Move the `main` function into the `anagrams.py` file to better reflect the intended structure of the project, separating the UI from the logic.
+- Consider handling potential errors when comparing words in `is_anagram`, such as non-string inputs.
+- Add more comprehensive error handling when reading from file.
+Correctness: 90%
+-----
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day5/ExercisesXP/AnagramChecker/anagrams.py
+suggestions for improvement:
+- Consider using a more robust input validation method to handle unexpected input types.
+- The main function could be further broken down into smaller, more manageable functions to improve readability.
+Correctness: 100%
+-----
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day5/ExercisesXP/AnagramChecker/sowpods.txt
+suggestions for improvement:
+- This is a text file containing a list of words; it does not contain any code and therefore cannot be graded for correctness in the context of the coding assignment.
+- This file is a data file containing a large word list, not code. Therefore, it cannot be assessed for correctness, readability, performance, or security in relation to the Chapter Content/Questions. It simply provides the raw data (word list) required for the anagram checker program.
+Correctness: 0.0%
+-----
