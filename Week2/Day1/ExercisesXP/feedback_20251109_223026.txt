@@ -1,0 +1,10 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day1/ExercisesXP/exercise.py
+suggestions for improvement:
+- The docstrings at the beginning of each exercise are redundant since there are comments explaining each step.
+- Consider adding more comprehensive error handling, although it's not explicitly required by the prompt.
+Brief justification:
+- correctness: The code accurately addresses all four exercises. Each class is correctly defined with the requested methods, and object instantiation and method calls are implemented as described in the chapter content. The Zoo class, including the bonus task for `add_animal`, works perfectly.
+- readability: The code is well-structured and uses descriptive variable names. The separation of exercises with comments enhances readability. Docstrings at the beginning of each exercise are redundant.
+- performance: The code's performance is efficient for the scale of the exercises. The algorithms used, such as sorting and searching within lists, are appropriate and well-implemented.
+- security: The provided code does not involve any external input or potentially vulnerable operations. Thus, security is not a major concern.
+
