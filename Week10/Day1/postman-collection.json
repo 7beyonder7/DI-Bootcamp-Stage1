@@ -1,0 +1,226 @@
+{
+  "info": {
+    "name": "Research Briefing Server",
+    "description": "API collection for the Research Briefing Server - an HTTP server exposing research tools with Bearer token authentication.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{MCP_HTTP_TOKEN}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "MCP_HTTP_TOKEN",
+      "value": "dev-token",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        },
+        "description": "Check if the server is running. No authentication required."
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "{\"status\":\"ok\",\"timestamp\":\"2024-01-15T12:00:00.000Z\"}"
+        }
+      ]
+    },
+    {
+      "name": "List Tools",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/tools",
+          "host": ["{{baseUrl}}"],
+          "path": ["tools"]
+        },
+        "description": "List all available tools with their input schemas."
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "[{\"name\":\"search_web\",\"description\":\"Search the web for a given query and return top results\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"},\"k\":{\"type\":\"integer\",\"default\":5}},\"required\":[\"query\"]}}]"
+        }
+      ]
+    },
+    {
+      "name": "Search Web",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"artificial intelligence trends 2024\",\n  \"k\": 5\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/tools/search_web",
+          "host": ["{{baseUrl}}"],
+          "path": ["tools", "search_web"]
+        },
+        "description": "Search the web using Google Custom Search API.\n\nParameters:\n- query (required): Search query string\n- k (optional): Number of results to return (default: 5, max: 10)"
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "[{\"title\":\"AI Trends 2024\",\"url\":\"https://example.com/ai\",\"snippet\":\"Latest trends in AI...\",\"source\":\"example.com\"}]"
+        },
+        {
+          "name": "Missing Query",
+          "status": "Bad Request",
+          "code": 400,
+          "body": "{\"error\":\"Missing required parameter: query\"}"
+        }
+      ]
+    },
+    {
+      "name": "Fetch Readable",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"url\": \"https://en.wikipedia.org/wiki/Artificial_intelligence\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/tools/fetch_readable",
+          "host": ["{{baseUrl}}"],
+          "path": ["tools", "fetch_readable"]
+        },
+        "description": "Fetch a URL and extract the main readable content using Mozilla Readability.\n\nParameters:\n- url (required): URL to fetch and extract content from\n\nReturns cleaned text content limited to 15,000 characters."
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "{\"url\":\"https://en.wikipedia.org/wiki/Artificial_intelligence\",\"title\":\"Artificial intelligence - Wikipedia\",\"text\":\"Artificial intelligence (AI) is...\"}"
+        },
+        {
+          "name": "Missing URL",
+          "status": "Bad Request",
+          "code": 400,
+          "body": "{\"error\":\"Missing required parameter: url\"}"
+        }
+      ]
+    },
+    {
+      "name": "Summarize with Citations",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"topic\": \"Renewable Energy Progress\",\n  \"docs\": [\n    {\n      \"title\": \"Solar Energy Growth Report\",\n      \"url\": \"https://example.com/solar\",\n      \"text\": \"Solar energy capacity has grown by 25% in 2024. Major installations in the US, China, and Europe have driven this growth.\"\n    },\n    {\n      \"title\": \"Wind Power Advances\",\n      \"url\": \"https://example.com/wind\",\n      \"text\": \"Offshore wind farms are expanding rapidly. The UK and Denmark lead in offshore installations. New turbine designs can generate 15MW per unit.\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/tools/summarize_with_citations",
+          "host": ["{{baseUrl}}"],
+          "path": ["tools", "summarize_with_citations"]
+        },
+        "description": "Summarize documents into exactly 5 bullet points with inline citations using local LLM (Ollama).\n\nParameters:\n- topic (required): Topic being summarized\n- docs (required): Array of documents with title, url, and text\n\nEach bullet is limited to 200 characters and includes citation markers like [1], [2]."
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "{\"bullets\":[\"Solar energy capacity grew 25% in 2024 [1]\",\"Offshore wind farms expanding with 15MW turbines [2]\",\"US, China, and Europe lead solar installations [1]\",\"UK and Denmark lead offshore wind development [2]\",\"Renewable energy becoming increasingly competitive [1][2]\"],\"sources\":[{\"i\":1,\"title\":\"Solar Energy Growth Report\",\"url\":\"https://example.com/solar\"},{\"i\":2,\"title\":\"Wind Power Advances\",\"url\":\"https://example.com/wind\"}]}"
+        },
+        {
+          "name": "Missing Topic",
+          "status": "Bad Request",
+          "code": 400,
+          "body": "{\"error\":\"Missing required parameter: topic\"}"
+        },
+        {
+          "name": "Ollama Not Running",
+          "status": "Internal Server Error",
+          "code": 500,
+          "body": "{\"error\":\"Ollama API error: 500. Is Ollama running with model \\\"llama3\\\"?\"}"
+        }
+      ]
+    },
+    {
+      "name": "Save Markdown",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filename\": \"brief_2024-01-15\",\n  \"content\": \"# Research Brief: AI Trends\\n\\n**Date:** 2024-01-15\\n\\n## Key Findings\\n\\n- Finding one [1]\\n- Finding two [2]\\n\\n## Sources\\n\\n1. [Source One](https://example.com/1)\\n2. [Source Two](https://example.com/2)\\n\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/tools/save_markdown",
+          "host": ["{{baseUrl}}"],
+          "path": ["tools", "save_markdown"]
+        },
+        "description": "Save markdown content to a file.\n\nParameters:\n- filename (required): Filename for the markdown file (extension added automatically)\n- content (required): Markdown content to save\n\nFiles are saved to the OUTPUT_DIR configured in .env (default: ./briefs)"
+      },
+      "response": [
+        {
+          "name": "Success",
+          "status": "OK",
+          "code": 200,
+          "body": "{\"path\":\"/path/to/briefs/brief_2024-01-15.md\"}"
+        },
+        {
+          "name": "Missing Filename",
+          "status": "Bad Request",
+          "code": 400,
+          "body": "{\"error\":\"Missing required parameter: filename\"}"
+        }
+      ]
+    }
+  ]
+}
