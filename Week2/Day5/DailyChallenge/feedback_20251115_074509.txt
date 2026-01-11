@@ -1,0 +1,6 @@
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day5/DailyChallenge/daily_challenge_oop.py
+suggestions for improvement:
+- The `deal` method can be simplified by using `self.cards.pop()`, which removes and returns the last element of the list, instead of choosing a random card and then removing it.
+- Consider adding error handling for edge cases, such as attempting to deal a card from an empty deck.
+Correctness: 100%
+-----

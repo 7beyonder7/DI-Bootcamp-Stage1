@@ -1,0 +1,12 @@
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day4/ExercisesXP/exercise_xp.py
+suggestions for improvement:
+- Consider adding more comments to explain complex logic.
+- The file path for 'words.txt' is hardcoded. Allow the user to specify the file path as input.
+Correctness: 100%
+-----
+URL: URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week2/Day4/ExercisesXP/words.txt
+suggestions for improvement:
+- This submission only contains a word list, which is related to Exercise 1 but does not implement any of the required functionality or the JSON parsing from exercise 2.
+- The code does not include any function definitions or logic for random sentence generation, file handling, or JSON processing as outlined in the instructions.
+Correctness: 30%
+-----
