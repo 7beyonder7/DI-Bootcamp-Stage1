@@ -1,0 +1,28 @@
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week10/Day2/agentic_rag.ipynb
+suggestions for improvement:
+- Consider adding error handling within the `ask` function for cases where the agent's query fails, to provide more informative feedback to the user.
+- For improved readability, you could encapsulate the printing logic within the `ask` function into smaller, more modular helper functions.
+Correctness: 90%
+-----
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week10/Day2/agentic_rag.py
+suggestions for improvement:
+- Consider adding more comprehensive error handling and logging throughout the agent's execution.
+- The code could benefit from more detailed comments explaining complex logic, especially within the graph building and node functions.
+Correctness: 100%
+-----
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week10/Day2/app.py
+suggestions for improvement:
+- The code should include a dummy implementation of the `AgenticRAG` class within `app.py` (or a separate file) to ensure that the Streamlit app can run without relying on a separate `agentic_rag.ipynb` file.
+- The `initialize_agent` function should include better error handling or logging to assist with debugging API key issues.
+- The file upload functionality should be more robust. Consider adding size limits or checks on file extensions to prevent malicious uploads.
+- Consider refactoring some sections of the code into functions to improve overall readability and maintainability. For example, the code that displays the chat history, the source documents or the reasoning steps could be placed in separate functions.
+- The prompt includes a requirement to handle timeouts gracefully. The provided code does not include this functionality. Consider adding timeout handling to the agent query.
+Correctness: 70%
+-----
+URL: https://github.com/7beyonder7/DI-Bootcamp-Stage1/blob/main/Week10/Day2/requirements.txt
+suggestions for improvement:
+- The provided code is a list of Python packages, not a complete application or a notebook implementing the agentic RAG pipeline as described in the problem statement. It does not address the core requirements of building a retriever, an agent with tool-calling capabilities, or orchestrating the reasoning-retrieve-read-synthesize loop.
+- The list contains `langgraph`, not mentioned in the instructions. The prompt does mention, however, that the agent should be built with LangChain, Tavily search, and Groq LLM which are included in the list. It also includes packages such as `faiss-cpu` and `sentence-transformers` which could be useful for a RAG pipeline, but there is no implementation of a RAG pipeline here.
+- The prompt asks to load `agentic_rag.ipynb` as text and use it within the `app.py` but this has not been done.
+Correctness: 0.0%
+-----
